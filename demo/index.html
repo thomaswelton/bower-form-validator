@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Bower Form Validator Demo</title>
+
+
+	<script data-main="main" src="../components/requirejs/require.js"></script>
+	<script>
+		requirejs.config({
+			baseUrl: "",
+			config:{
+
+			},
+			paths:{
+				'domReady' : '../components/requirejs-domready/domReady',
+				'FormValidator' : '../dist/FormValidator'
+			}
+		});
+	</script>
+</head>
+<body>
+	<h1>Form Validator</h1>
+
+	<div id="errors"></div>
+	
+	<form id="form" action="http://bootstrap.dev/validation" method="post" data-validate-fields="[{&quot;field&quot;:&quot;title&quot;,&quot;label&quot;:&quot;Title&quot;,&quot;rules&quot;:&quot;required&quot;}]">
+	<label class="">
+		<span>Title</span>
+		<input type="text" name="title" value="">
+	</label>
+
+	<button type="submit">Submit</button>
+</form>
+</body>
+</html>
