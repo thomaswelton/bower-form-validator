@@ -34,7 +34,7 @@ require ['FormValidator'], (FormValidator) ->
 	
 	form = document.getElementById 'form'
 
-	new FormValidator form, (errors) ->
-		## Callback not fired if form is valid
-		## Handle errors below
+	new FormValidator form,
+      onError: (errors) ->
+         ## Handle errors
 ```

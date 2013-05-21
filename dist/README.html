@@ -115,12 +115,26 @@
 <a href="https://david-dm.org/thomaswelton/bower-form-validator"><img src="https://david-dm.org/thomaswelton/bower-form-validator.png" alt="Dependency Status"></a></p>
 <p>Component for validation of codeigniter forms</p>
 <h2>Usage</h2>
+<p>Assuming you are using codeigniter server side validation and setting your rules via an array <a href="http://ellislab.com/codeigniter/user-guide/libraries/form_validation.html#validationrulesasarray">http://ellislab.com/codeigniter/user-guide/libraries/form_validation.html#validationrulesasarray</a></p>
+<pre><code class="lang-php">$config = array(
+               array(
+                     &#39;field&#39;   =&gt; &#39;field&#39;, 
+                     &#39;label&#39;   =&gt; &#39;field label&#39;, 
+                     &#39;rules&#39;   =&gt; &#39;required&#39;
+                  )
+            );
+
+$this-&gt;form_validation-&gt;set_rules($config);</code></pre>
+<p>Update your HTML with your validation config as JSON</p>
+<pre><code class="lang-html">&lt;form id=&quot;form&quot; data-validate-fields=&quot;&lt;?= json_encode($config) ?&gt;&quot;&gt;</code></pre>
+<p>Add some javascript (coffee) to initialize the FormValidator</p>
 <pre><code class="lang-coffee">require [&#39;FormValidator&#39;], (FormValidator) -&gt;
 
     form = document.getElementById &#39;form&#39;
 
-    new FormValidator form, (errors) -&gt;
-        ## Handle errors or allow the form to be submitted</code></pre>
+    new FormValidator form,
+      onError: (errors) -&gt;
+         ## Handle errors</code></pre>
 
   </body>
 </html>

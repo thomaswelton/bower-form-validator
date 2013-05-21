@@ -4,14 +4,13 @@ require ['FormValidator', 'domReady!'], (FormValidator) ->
 	form = document.getElementById 'form'
 	messagesEl = document.getElementById 'errors'
 
-	new FormValidator form, (errors) ->
-		console.log 'Form Validation Errors', errors
+	new FormValidator form,
+		onError: (errors) ->
+			console.log 'Form Validation Errors', errors
 
-		if errors.length > 0
-			messagesArray = []
-			for error in errors
-				messagesArray.push error.message
+			if errors.length > 0
+				messagesArray = []
+				for error in errors
+					messagesArray.push error.message
 
-			messagesEl.innerHTML = messagesArray.join '<br>'
-
-
+				messagesEl.innerHTML = messagesArray.join '<br>'
