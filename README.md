@@ -38,3 +38,10 @@ require ['FormValidator'], (FormValidator) ->
       onError: (errors) ->
          ## Handle errors
 ```
+
+Add a shim for require js
+```coffee
+shim:
+   "validate":
+      "exports" : "FormValidator"
+```
