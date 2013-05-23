@@ -1,8 +1,9 @@
 {
   "name": "FormValidator",
   "version": "0.0.0",
-  "main": "dist/FormValidator.js",
+  "main": ["dist/FormValidator.js", "components/validate/validate.js"],
   "dependencies": {
+    
   },
   "devDependencies": {
     "validate": "git://github.com/rickharrison/validate.js.git",
