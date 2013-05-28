@@ -1,4 +1,12 @@
 (function() {
+  requirejs.config({
+    shim: {
+      "validate": {
+        "exports": "FormValidator"
+      }
+    }
+  });
+
   define(['validate', 'mootools'], function(FormValidator) {
     var FormValidation;
 
