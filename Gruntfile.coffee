@@ -53,6 +53,8 @@ module.exports = (grunt) =>
 	
 	grunt.registerTask 'default', ['bower', 'compile']
 
+	grunt.registerTask 'travis', 'default'
+
 	grunt.registerTask 'server', ['exec:server', 'exec:open', 'watch']
 
 	grunt.registerTask 'commit', ['default', 'git']
