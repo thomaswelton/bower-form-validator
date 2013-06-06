@@ -63,7 +63,7 @@ module.exports = (grunt) =>
 			
 			coffee:
 				files: ['src/**/*.coffee']
-				tasks: ['coffee', 'requirejs']
+				tasks: ['coffee']
 
 		connect:
 			server:
@@ -78,25 +78,6 @@ module.exports = (grunt) =>
 
 			open:
 				command: 'open http://localhost:9001/'
-
-		requirejs:
-			compile:
-				options:
-					optimizeCss: false
-					optimize: 'none'
-					logLevel: 1
-					name: "FormValidator"
-					out: "dist/FormValidator.js"
-					baseUrl: "src"
-					exclude: ['mootools']
-					paths:
-						'FormValidator': '../dist/FormValidator'
-						'validate': '../components/validate/validate'
-						'mootools' : '../demo/mootools'
-					
-					shim:
-						"validate":
-							"exports" : "FormValidator"
 
 		shell:
 			bower_cache:
@@ -116,11 +97,10 @@ module.exports = (grunt) =>
 	grunt.loadNpmTasks 'grunt-markdown'
 	grunt.loadNpmTasks 'grunt-regarde'
 	grunt.loadNpmTasks 'grunt-contrib-connect'
-	grunt.loadNpmTasks 'grunt-contrib-requirejs'
 	grunt.loadNpmTasks 'grunt-exec'
 	grunt.loadNpmTasks 'grunt-shell'
 	
-	grunt.registerTask 'default', ['shell:bower', 'compile', 'requirejs', 'uglify']
+	grunt.registerTask 'default', ['shell:bower', 'compile', 'uglify']
 
 	grunt.registerTask 'server', ['exec:server', 'exec:open', 'watch']
 

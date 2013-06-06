@@ -1,3 +1,8 @@
+requirejs.config
+	shim:
+   		"validate":
+      		"exports" : "FormValidator"
+
 define ['validate','mootools'], (FormValidator) ->
 	class FormValidation
 		constructor: (@form, @options = {}) ->

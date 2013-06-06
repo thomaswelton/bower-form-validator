@@ -1,13 +1,12 @@
 {
     "name": "FormValidator"
   , "version": "0.0.0"
-  , "main": "dist/FormValidator.js"
+  , "main": ["dist/FormValidator.js"]
   , "dependencies": {
-  
+    "validate": "git://github.com/rickharrison/validate.js.git"
   }
   , "devDependencies": {
-      "validate": "git://github.com/rickharrison/validate.js.git"
-    , "requirejs": "git://github.com/jrburke/requirejs"
+      "requirejs": "git://github.com/jrburke/requirejs"
     , "requirejs-domready": "git://github.com/thomaswelton/domReady.git"
   }
   , "ignore": [
