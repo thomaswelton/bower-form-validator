@@ -3,7 +3,7 @@
   , "version": "0.0.0"
   , "main": ["dist/FormValidator.js"]
   , "dependencies": {
-    "validate": "git://github.com/rickharrison/validate.js.git"
+    "validate": "git://github.com/thomaswelton/validate.js.git"
   }
   , "devDependencies": {
       "requirejs": "git://github.com/jrburke/requirejs"
